@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+    <body>
+        <h1>{{c['name']}}</h1>
+        <div class='properties'>
+       		<div>
+        		<div>Capital</div>
+        		<div>{{c['capital']}}</div>
+        	</div>
+         	<div>
+        		<div>Continent</div>
+        		<div><a href="../continent/{{c.continent}}">{{c['continent']}}</a></div>
+        	</div>
+         	<div>
+        		<div>Population</div>
+        		<div>{{c['population']}}</div>
+        	</div>
+        	<div>
+        		<div>GDP (milion $)</div>
+        		<div>{{c['gdp']}}</div>
+        	</div>
+         	<div>
+        		<div>Flag</div>
+        		<div><img src="{{c['flag']}}" class="big"></div>
+       	 	</div>
+    	</div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+body{
+	font-family:arial;
+}
+img.tiny{
+	width: 20px;
+	border: solid thin black;
+}
+img.big{
+	width:200px;
+	border: solid thin black;
+	position: absolute;
+	right: 100ex;
+	top: 10ex;
+}
+.properties div div{
+	display: inline-block;
+}
+.properties div div:first-child{
+	width: 20ex;
+}
+.properties div div:last-child{
+	display: bold;
+}
+a{
+	a.text-decoration: none;
+}
