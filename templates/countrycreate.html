@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<link rel='stylesheet' href='/static/style.css'>
+</head>
+	<body class="detail">
+
+		<h1>Welcome to my World Fact Book. To create your own country, click "Create a Country" button.</h1>
+
+		<form action='/createcountryByName'>
+		
+		<div class='properties'>
+
+			<div>
+				<div>Country Name: </div>
+				<div><input type='text' name="name"></div>
+			</div>
+
+			<div>
+				<div>Capital: </div>
+				<div><input type="text" name="capital"></div>
+			</div>
+
+			<div>
+				<div>Continent: </div>
+				<div><input type="text" name="continent"></div>
+			</div>
+
+			<div>
+				<div>Population: </div>
+				<div><input type="text" name="population"></div>
+			</div>
+
+			<div>
+				<div>GDP (Million $)</div>
+				<div><input type="text" name="gdp"></div>
+			</div>
+
+			<div>
+				<div>Area (km<sup>2</sup>)</div>
+				<div><input type="text" name="area"></div>
+			</div>
+
+			<div>
+				<div>TLD: </div>
+				<div><input type="text" name="tld"></div>
+			</div>
+			<div>
+				<div>Flag: </div>
+				<div><input type="text" name="flag"></div>
+			</div>
+
+		</div>
+	
+		<input type="submit" name="submit" value="Submit">
+
+		</form>		
+
+	</body>
+</html>

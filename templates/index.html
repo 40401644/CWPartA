@@ -4,13 +4,31 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
     <body>
-        <h1>World Factbook</h1>
-        <div>There are {{length_of_cl}}
-        countries in {{a}}</div>
+        <h1>World Fact book</h1>
+        <div>There are {{w|length}} countries in the world</div>
        <ul>
-           {% for c in cl %}
-           <li><a href='/countryByName/{{c.name}}'><img src='{{c.flag}}' class="tiny">{{c.name}}</a></li>
+           {% for c in w %}
+           <li>
+                <a href='/countryByName/{{c.name}}'><img src='{{c.flag}}' class="tiny">{{c.name}}
+                </a>
+            </li>
            {% endfor %}
        </ul>
+       <div class="delete_button">
+            {% if (page_number-page_size) < 0 %}
+            <a href="/begin/{{page_number-page_size}}"><input type="button" name="previous" value="Previous" disabled=""></a>
+            {% else %}
+            <a href="/begin/{{page_number-page_size}}"><input type="button" name="previous" value="Previous"></a>
+            {% endif %}
+            {% if (page_number+page_size) > 194 %}
+            <a href="/begin/{{page_number+page_size}}"><input type="button" name="next" value="Next" disabled=""></a>
+            {% else %}
+            <a href="/begin/{{page_number+page_size}}"><input type="button" name="next" value="Next"></a>
+            {% endif %}
+            <a href="/create"><input type="button" name="create" value="Create">
+       </div>
+       <!-- <div class="delete_button"> -->
+            
+       <!-- </div> -->
     </body>
 </html>

@@ -4,28 +4,48 @@
 	<link rel="stylesheet" href="/static/style.css">
 </head>
     <body>
-        <h1>{{c['name']}}</h1>
-        <div class='properties'>
-       		<div>
-        		<div>Capital</div>
-        		<div>{{c['capital']}}</div>
-        	</div>
-         	<div>
-        		<div>Continent</div>
-        		<div><a href="../continent/{{c.continent}}">{{c['continent']}}</a></div>
-        	</div>
-         	<div>
-        		<div>Population</div>
-        		<div>{{c['population']}}</div>
-        	</div>
-        	<div>
-        		<div>GDP (milion $)</div>
-        		<div>{{c['gdp']}}</div>
-        	</div>
-         	<div>
-        		<div>Flag</div>
-        		<div><img src="{{c['flag']}}" class="big"></div>
-       	 	</div>
-    	</div>
+        <form action="/updatecountryByName">
+            <h1>{{c['name']}}</h1>
+            <div class='properties'>
+                <div>
+                    <div>Name: </div>
+                    <div>{{c['name']}}</div>
+                </div>
+           		<div>
+            		<div>Capital: </div>
+            		<div>{{c['capital']}}</div>
+            	</div>
+             	<div>
+            		<div>Continent: </div>
+            		<div><a href="../continent/{{c.continent}}">{{c['continent']}}</a></div>
+            	</div>
+             	<div>
+            		<div>Population: </div>
+            		<div>{{'{:,.0f}'.format(c['population'])}}</div>
+            	</div>
+            	<div>
+            		<div>GDP (milion $): </div>
+            		<div>{{'{:,.0f}'.format(c['gdp']/1000000)}}</div>
+            	</div>
+                <div>
+                    <div>Area (km<sup>2</sup>): </div>
+                    <div>{{'{:,.0f}'.format(c['area'])}}</div>
+                </div>
+                <div>
+                    <div>TLD :</div>
+                    <div>.{{c['tld']}}</div>
+                </div>
+             	
+            		<!-- <div>Flag</div> -->
+            	<div>
+                   <img src="{{c['flag']}}" class="big">
+                </div>
+            	<div class='delete_button'>
+            		<a href="/delete/{{c.name}}"><input type="button" name="delete" value="Delete"></a>
+                    <a href="/editcountryByName/{{c.name}}"><input type="button" name="edit" value="Edit"></a>
+                </div>
+               
+                    
+        	
     </body>
 </html>
