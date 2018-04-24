@@ -1,24 +1,15 @@
-<!doctype html>
-<html>
-<head>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-    <body>
-        <h1>World Fact book</h1>
-        <div class="hov">
-            {% for s in lota %}
-            <a href="/alphabetic/{{s}}">{{s}}</a>
-            {% endfor %}
-        </div>
-        <div>There are {{w|length}} countries in the world</div>
-       <ul>
-           {% for c in w %}
-           <li>
-                <a href='/countryByName/{{c.name}}'><img src='{{c.flag}}' class="tiny">{{c.name}}
-                </a>
-            </li>
-           {% endfor %}
+{% extends "base.html" %}
+{% block content %}
+<div>There are {{w|length}} countries in the world</div>
+    <ul>
+        {% for c in w %}
+        <li>
+            <a href='/countryByName/{{c.name}}'><img src='{{c.flag}}' class="tiny">{{c.name}}
+            </a>
+        </li>
+        {% endfor %}
        </ul>
+
        <div class="delete_button">
             {% if (page_number-page_size) < 0 %}
             <a href="/begin/{{page_number-page_size}}"><input type="button" name="previous" value="Previous" disabled=""></a>
@@ -35,5 +26,4 @@
        <!-- <div class="delete_button"> -->
             
        <!-- </div> -->
-    </body>
-</html>
+{% endblock %}

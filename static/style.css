@@ -1,6 +1,8 @@
 body{
 	font-family:arial;
-	background-color: yellow;
+	/*color: white;*/
+	background-image: url("earth9.jpg");
+	background-repeat: no-repeat;
 }
 img.tiny{
 	width: 20px;
@@ -26,9 +28,6 @@ img.big{
 a{
 	text-decoration: none;
 }
-.hov a{
-	background-color: white;
-}
 .nav_button{
 	border: solid thin black;
 	padding: 1ex;
@@ -43,8 +42,15 @@ a{
 	padding: 1ex;
 
 }
-
-/*.disabled{*/
-	opacity: 0.6;
-	cursor: not-allowed;
+ul#sort a:link{
+	background-color: white;
+	color:black;
+	padding: 10px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	list-style-type: none;
+}
+ul#sort a:hover{
+	background-color: blue;
 }
