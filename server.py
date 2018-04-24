@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 import json
 
 w=json.load(open("worldl.json"))
+lota = sorted(list(set([c['name'][0] for c in w])))
+print(lota)
+
 for c in w:
     c['tld'] = c['tld'][1:]
 page_size=20
@@ -14,7 +17,8 @@ def mainPage():
     #return  '<br>'.join([c['name'] for c in w]) # retrieve the all county in main page
     return render_template('index.html',w=w[0:page_size],
                            page_number = 0,
-                           page_size = page_size)
+                           page_size = page_size,
+                           lota = lota)
 
 @app.route('/begin/<b>')
 def beginPage(b):
@@ -22,7 +26,8 @@ def beginPage(b):
     return render_template('index.html',
                            w=w[bn:bn+page_size],
                             page_number=bn,
-                           page_size=page_size)
+                           page_size=page_size,
+                           lota = lota)
 
 
 @app.route('/country/<i>')
@@ -101,5 +106,15 @@ def createcountryByNamePage():
     w.append(c)
     w.sort(key=lambda c: c['name'])
     return render_template('country.html', c=c)
+
+@app.route('/alphabetic/<a>')
+def alphabetic(a):
+	cl = [c for c in w if c['name'][0]==a]
+	return render_template(
+		'continent.html',
+		length_of_cl = len(cl),
+		cl = cl,
+		a = a,
+                lota = lota)
 
 app.run(host='0.0.0.0', port=5644,debug=True)
