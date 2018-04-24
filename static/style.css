@@ -26,6 +26,9 @@ img.big{
 a{
 	text-decoration: none;
 }
+.hov a{
+	background-color: white;
+}
 .nav_button{
 	border: solid thin black;
 	padding: 1ex;
