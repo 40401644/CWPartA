@@ -1,7 +1,7 @@
 body{
 	font-family:arial;
 	/*color: white;*/
-	background-image: url("earth9.jpg");
+	background-image: url("earth13.jpg");
 	background-repeat: no-repeat;
 }
 img.tiny{
@@ -52,5 +52,5 @@ ul#sort a:link{
 	list-style-type: none;
 }
 ul#sort a:hover{
-	background-color: blue;
+	background-color: grey;
 }
