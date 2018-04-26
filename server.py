@@ -63,10 +63,7 @@ def deleteCountry(n):
             break
         i=i+1
     del w[i]
-    return render_template('index.html',
-        page_number = 0,
-        page_size =page_size,
-        w=w[0:page_size])
+    return render_template('index.html', page_number = 0, page_size =page_size, w=w[0:page_size])
 
 
 @app.route('/editcountryByName/<n>')
