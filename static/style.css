@@ -54,6 +54,6 @@ ul#sort a:link{
 ul#sort a:hover{
 	background-color: grey;
 }
-/*li{*/
+li{
 	list-style-type: none;
 }
